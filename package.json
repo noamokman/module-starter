@@ -19,11 +19,11 @@
     "node": ">=4"
   },
   "lint-staged": {
-    "src/**/*.js": [
+    "**/src/**.js": [
       "eslint --fix",
       "git add"
     ],
-    "test/**/*.js": [
+    "**/test/**.js": [
       "eslint --fix",
       "git add"
     ]

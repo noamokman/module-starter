@@ -6,7 +6,7 @@ export default {
     'lint-src': 'eslint src --fix',
     'lint-test': 'eslint test --fix',
     precommit: 'lint-staged',
-    "commitmsg": "validate-commit-msg",
+    commitmsg: 'validate-commit-msg',
     babel: 'babel src -d lib -s',
     build: 'rimraf lib && npm run babel',
     coveralls: 'cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js',
@@ -18,11 +18,11 @@ export default {
     node: '>=4'
   },
   'lint-staged': {
-    'src/**/*.js': [
+    '**/src/**.js': [
       'eslint --fix',
       'git add'
     ],
-    'test/**.js': [
+    '**/test/**.js': [
       'eslint --fix',
       'git add'
     ]
@@ -40,6 +40,6 @@ export default {
     mocha: '^3.0.2',
     'npm-run-all': '^3.1.1',
     rimraf: '^2.5.4',
-    "validate-commit-msg": "^2.8.2"
+    'validate-commit-msg': '^2.8.2'
   }
 };
