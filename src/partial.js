@@ -34,7 +34,7 @@ export default {
     'babel-register': '^6.16.3',
     chai: '^3.5.0',
     eslint: '^3.8.1',
-    'eslint-config-noamokman': '^4.0.0',
+    'eslint-config-noamokman': '^5.0.0',
     husky: '^0.11.9',
     'lint-staged': '^3.2.0',
     mocha: '^3.0.2',
