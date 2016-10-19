@@ -58,10 +58,10 @@
     "babel-cli": "^6.16.0",
     "babel-preset-env": "0.0.6",
     "babel-register": "^6.16.3",
-    "eslint": "^3.7.1",
+    "eslint": "^3.8.1",
     "eslint-config-noamokman": "^4.0.0",
     "husky": "^0.11.9",
-    "lint-staged": "^3.1.0",
+    "lint-staged": "^3.2.0",
     "npm-run-all": "^3.1.1",
     "rimraf": "^2.5.4",
     "validate-commit-msg": "^2.8.2"
