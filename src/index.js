@@ -3,11 +3,13 @@ import cpr from 'cpr';
 import pify from 'pify';
 import jsonfile from 'jsonfile';
 import _ from 'lodash';
+import {rename} from 'fs';
 import partial from './partial.js';
 const jf = pify(jsonfile);
 
 export function copyStaticFiles ({path}) {
-  return pify(cpr)(join(__dirname, '../static'), path, {overwrite: true});
+  return pify(cpr)(join(__dirname, '../static'), path, {overwrite: true})
+    .then(() => pify(rename)(join(path, 'gitignore'), join(path, '.gitignore')));
 }
 
 export function fillPackageJson ({path}) {
