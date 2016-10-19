@@ -18,11 +18,7 @@ export default {
     node: '>=4'
   },
   'lint-staged': {
-    '**/src/**.js': [
-      'eslint --fix',
-      'git add'
-    ],
-    '**/test/**.js': [
+    '*.js': [
       'eslint --fix',
       'git add'
     ]
