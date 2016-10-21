@@ -29,6 +29,7 @@ export default {
     'babel-preset-env': '0.0.6',
     'babel-register': '^6.16.3',
     chai: '^3.5.0',
+    coveralls: '^2.11.14',
     eslint: '^3.8.1',
     'eslint-config-noamokman': '^5.0.0',
     husky: '^0.11.9',
