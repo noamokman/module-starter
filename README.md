@@ -17,6 +17,17 @@ Bootstrap a new module repository with these steps:
 
 * run `module-starter` in the folder
 
+### CLI
+``` bash
+$ module-starter
+  
+  Options:
+
+    -h, --help              output usage information
+    -V, --version           output the version number
+    -c, --cli               Initialize a CLI Tool module
+```
+
 ### Example
 ``` bash
 git clone https://github.com/me/my-module

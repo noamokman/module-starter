@@ -44,6 +44,7 @@
   "homepage": "https://github.com/noamokman/module-starter#readme",
   "dependencies": {
     "commander": "^2.9.0",
+    "copyfiles": "^1.2.0",
     "cpr": "^2.0.0",
     "jsonfile": "latest",
     "lodash": "^4.16.4",
