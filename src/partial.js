@@ -4,15 +4,15 @@ export default {
   scripts: {
     lint: 'run-p lint-*',
     'lint-src': 'eslint src --fix',
-    'lint-test': 'eslint test --fix',
+    'lint-tests': 'eslint __tests__ --fix',
     precommit: 'lint-staged',
     commitmsg: 'validate-commit-msg',
     babel: 'babel src -d lib -s',
     build: 'rimraf lib && npm run babel',
+    jest: 'jest',
     coveralls: 'cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js',
     prepublishOnly: 'npm run build',
-    test: 'npm run lint && babel-node ./node_modules/babel-istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha --report lcovonly --report text --report html -- --compilers js:babel-register test',
-    posttest: 'babel-istanbul check-coverage --statements 100 --functions 100 --branches 100 --lines 100'
+    test: 'npm run lint && npm run jest'
   },
   engines: {
     node: '>=4'
@@ -24,19 +24,28 @@ export default {
     ]
   },
   devDependencies: {
-    'babel-cli': '^6.16.0',
-    'babel-istanbul': '^0.11.0',
-    'babel-preset-env': '0.0.6',
-    'babel-register': '^6.16.3',
-    chai: '^3.5.0',
-    coveralls: '^2.11.14',
-    eslint: '^3.8.1',
-    'eslint-config-noamokman': '^5.0.0',
-    husky: '^0.11.9',
-    'lint-staged': '^3.2.0',
-    mocha: '^3.0.2',
-    'npm-run-all': '^3.1.1',
-    rimraf: '^2.5.4',
-    'validate-commit-msg': '^2.8.2'
+    'babel-cli': '^6.24.1',
+    'babel-jest': '^20.0.3',
+    'babel-preset-env': '^1.6.0',
+    coveralls: '^2.13.1',
+    eslint: '^4.3.0',
+    'eslint-config-noamokman': '^6.0.1',
+    husky: '^0.14.3',
+    'lint-staged': '^4.0.2',
+    'npm-run-all': '^4.0.2',
+    rimraf: '^2.6.1',
+    'validate-commit-msg': '^2.13.1'
+  },
+  jest: {
+    notify: true,
+    collectCoverage: true,
+    coverageThreshold: {
+      global: {
+        branches: 100,
+        functions: 100,
+        lines: 100,
+        statements: 100
+      }
+    }
   }
 };
