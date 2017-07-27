@@ -29,11 +29,11 @@ $ module-starter
 
    ARGUMENTS
 
-     [path]      directory to initialize      optional      default: "/path/to/cwd"
+     [path]      Directory to initialize      optional      default: "/path/to/cwd"
 
    OPTIONS
 
-     -c, --cli      Initialize a CLI Tool module      optional      default: false
+     -c, --cli      Initialize a CLI module      optional      default: false
 
    GLOBAL OPTIONS
 
@@ -50,6 +50,14 @@ $ module-starter
 git clone https://github.com/me/my-module
 cd my-module
 module-starter
+```
+
+### CLI
+You can also genrate a module with a CLI
+``` bash
+git clone https://github.com/me/my-module
+cd my-module
+module-starter --cli
 ```
 
 ## License

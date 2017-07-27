@@ -8,8 +8,8 @@ const notifier = updateNotifier({pkg});
 
 program.version(pkg.version)
   .description(pkg.description)
-  .argument('[path]', 'directory to initialize', null, process.cwd())
-  .option('-c, --cli', 'Initialize a CLI Tool module', program.BOOL, false)
+  .argument('[path]', 'Directory to initialize', null, process.cwd())
+  .option('-c, --cli', 'Initialize a CLI module', program.BOOL, false)
   .action(({path}, {cli}, logger) => initilizeModuleDirectory({path: resolve(path), cli})
     .then(() => {
       logger.info('All done!');
