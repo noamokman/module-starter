@@ -17,9 +17,9 @@
     "test-dump": "npm run dump && run-p test-dump-*",
     "dump": "npm run build && rimraf dump && run-p dump-*",
     "dump-module": "node bin/module-starter dump/module",
-    "test-dump-module": "cd dump/module && npm it",
+    "test-dump-module": "cd dump/module && npm install && npm test",
     "dump-cli": "node bin/module-starter dump/cli -c",
-    "test-dump-cli": "cd dump/cli && npm it"
+    "test-dump-cli": "cd dump/cli && npm install && npm test"
   },
   "engines": {
     "node": ">=4"
