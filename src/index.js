@@ -2,16 +2,17 @@ import {join} from 'path';
 import cpr from 'cpr';
 import pify from 'pify';
 import jsonfile from 'jsonfile';
-import _ from 'lodash';
 import {rename} from 'fs';
 import partial from './partial.js';
 import partialCli from './partial-cli.js';
 import execa from 'execa';
+
 const jf = pify(jsonfile);
+const cp = pify(cpr);
 
 export function copyStaticFiles ({path, cli}) {
-  return pify(cpr)(join(__dirname, '../static/common'), path, {overwrite: true})
-    .then(() => pify(cpr)(join(__dirname, cli ? '../static/cli' : '../static/module'), path, {overwrite: true}))
+  return cp(join(__dirname, '../static/common'), path, {overwrite: true})
+    .then(() => cli && cp(join(__dirname, '../static/cli'), path, {overwrite: true}))
     .then(() => pify(rename)(join(path, 'gitignore'), join(path, '.gitignore')));
 }
 
@@ -31,10 +32,10 @@ export function fillPackageJson ({path, cli}) {
         .then(() => jf.readFile(pkgPath));
     })
     .then(pkg => {
-      const newPkg = _.merge(pkg, cli ? partialCli : partial);
+      let newPkg = {...pkg, ...partial};
 
       if (cli) {
-        newPkg.bin = `bin/${pkg.name}`;
+        newPkg = {...newPkg, ...partialCli, bin: `bin/${pkg.name}`};
       }
 
       return jf.writeFile(pkgPath, newPkg, {spaces: 2});
@@ -43,7 +44,7 @@ export function fillPackageJson ({path, cli}) {
 
 export function renameBin ({path}) {
   return jf.readFile(join(path, 'package.json'))
-    .then(({name}) => pify(rename)(join(path, 'bin', 'module-starter'), join(path, 'bin', `${name}`)));
+    .then(({name}) => pify(rename)(join(path, 'bin', 'module-starter'), join(path, 'bin', name)));
 }
 
 export function initilizeModuleDirectory ({path, cli}) {
