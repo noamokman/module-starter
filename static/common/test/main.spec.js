@@ -1,7 +1,7 @@
 import {expect} from 'chai';
 
 describe('module', () => {
-  let module = require('../src');
+  const module = require('../src');
 
   describe('exports', () => {
     it('should expose a default function', () => {
