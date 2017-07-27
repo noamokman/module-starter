@@ -31,6 +31,7 @@ export default {
     eslint: '^4.3.0',
     'eslint-config-noamokman': '^6.0.1',
     husky: '^0.14.3',
+    jest: '^20.0.4',
     'lint-staged': '^4.0.2',
     'npm-run-all': '^4.0.2',
     rimraf: '^2.6.1',
