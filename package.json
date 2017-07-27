@@ -20,7 +20,7 @@
     "test-dump-module": "cd dump/module && npm install && npm test",
     "dump-cli": "node bin/module-starter dump/cli -c",
     "test-dump-cli": "cd dump/cli && npm install && npm test",
-    "release": "npm run-s release-*",
+    "release": "run-s release-*",
     "release-module": "git-directory-deploy --directory dump/module --branch master --repo https://$GH_TOKEN@github.com/noamokman/module-starter-sample.git",
     "release-cli": "git-directory-deploy --directory dump/cli --branch cli --repo https://$GH_TOKEN@github.com/noamokman/module-starter-sample.git"
   },
