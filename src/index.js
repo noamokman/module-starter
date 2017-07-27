@@ -36,6 +36,7 @@ export function fillPackageJson ({path, cli}) {
 
       if (cli) {
         newPkg = {...newPkg, ...partialCli, bin: `bin/${pkg.name}`};
+        newPkg.description = newPkg.description || `${pkg.name} cli`;
       }
 
       return jf.writeFile(pkgPath, newPkg, {spaces: 2});
