@@ -13,7 +13,7 @@
     "babel": "babel src -d lib -s",
     "build": "rimraf lib && npm run babel",
     "prepublishOnly": "npm run build",
-    "test": "npm run lint",
+    "test": "npm run lint && npm run test-dump",
     "test-dump": "npm run dump && run-p test-dump-*",
     "dump": "npm run build && rimraf dump && run-p dump-*",
     "dump-module": "node bin\\module-starter dump\\module",
