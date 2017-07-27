@@ -43,24 +43,22 @@
   },
   "homepage": "https://github.com/noamokman/module-starter#readme",
   "dependencies": {
-    "commander": "^2.9.0",
-    "copyfiles": "^1.2.0",
-    "cpr": "^2.0.2",
+    "caporal": "^0.7.0",
+    "cpr": "^2.2.0",
     "jsonfile": "latest",
     "lodash": "^4.17.4",
-    "pify": "^2.3.0",
-    "update-notifier": "^2.1.0"
+    "pify": "^3.0.0",
+    "update-notifier": "^2.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-preset-env": "1.3.3",
-    "babel-register": "^6.24.1",
-    "eslint": "^3.19.0",
-    "eslint-config-noamokman": "^5.2.0",
-    "husky": "^0.13.3",
-    "lint-staged": "^3.4.0",
+    "babel-preset-env": "1.6.0",
+    "eslint": "^4.3.0",
+    "eslint-config-noamokman": "^6.0.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.2",
     "npm-run-all": "^4.0.2",
     "rimraf": "^2.6.1",
-    "validate-commit-msg": "^2.12.1"
+    "validate-commit-msg": "^2.13.1"
   }
 }
