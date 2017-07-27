@@ -21,8 +21,8 @@
     "dump-cli": "node bin/module-starter dump/cli -c",
     "test-dump-cli": "cd dump/cli && npm install && npm test",
     "release": "run-s release-*",
-    "release-module": "git-directory-deploy --directory dump/module --branch master --repo https://$GH_TOKEN@github.com/noamokman/module-starter-sample.git",
-    "release-cli": "git-directory-deploy --directory dump/cli --branch cli --repo https://$GH_TOKEN@github.com/noamokman/module-starter-sample.git"
+    "release-module": "git-directory-deploy --email travis@travis-ci.org --user 'Travis CI' --directory dump/module --branch master --repo https://$GH_TOKEN@github.com/noamokman/module-starter-sample.git",
+    "release-cli": "git-directory-deploy --email travis@travis-ci.org --user 'Travis CI' --directory dump/cli --branch cli --repo https://$GH_TOKEN@github.com/noamokman/module-starter-sample.git"
   },
   "engines": {
     "node": ">=4"
