@@ -7,6 +7,11 @@ a cli tool to help you start a new node module
 $ [sudo] npm install module-starter -g
 ```
 
+### Preview
+See the output of this module [here](https://github.com/noamokman/module-starter-sample)
+
+Check out the `cli` branch [here](https://github.com/noamokman/module-starter-sample/tree/cli)
+
 ## Usage
 
 Bootstrap a new module repository with these steps:
