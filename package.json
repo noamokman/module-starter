@@ -12,8 +12,14 @@
     "commitmsg": "validate-commit-msg",
     "babel": "babel src -d lib -s",
     "build": "rimraf lib && npm run babel",
-    "prepublish": "npm run build",
-    "test": "npm run lint"
+    "prepublishOnly": "npm run build",
+    "test": "npm run lint",
+    "test-dump": "npm run dump && run-p test-dump-*",
+    "dump": "npm run build && rimraf dump && run-p dump-*",
+    "dump-module": "node bin\\module-starter dump\\module",
+    "test-dump-module": "cd dump\\module && npm it",
+    "dump-cli": "node bin\\module-starter dump\\cli -c",
+    "test-dump-cli": "cd dump\\cli && npm it"
   },
   "engines": {
     "node": ">=4"
@@ -45,6 +51,7 @@
   "dependencies": {
     "caporal": "^0.7.0",
     "cpr": "^2.2.0",
+    "execa": "^0.7.0",
     "jsonfile": "latest",
     "lodash": "^4.17.4",
     "pify": "^3.0.0",
