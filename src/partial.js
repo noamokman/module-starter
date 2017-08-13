@@ -47,6 +47,7 @@ export default {
         lines: 100,
         statements: 100
       }
-    }
+    },
+    testMatch: ['**/__tests__/**/*.spec.js']
   }
 };
