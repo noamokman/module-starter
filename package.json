@@ -17,9 +17,9 @@
     "test-dump": "npm run dump && run-p test-dump-*",
     "dump": "npm run build && rimraf dump && run-p dump-*",
     "dump-module": "node bin/module-starter dump/module",
-    "test-dump-module": "cd dump/module && npm install && npm test && ncu -e 2",
+    "test-dump-module": "cd dump/module && npm install && npm test && ncu -e 2 --packageFile package.json",
     "dump-cli": "node bin/module-starter dump/cli -c",
-    "test-dump-cli": "cd dump/cli && npm install && npm test && ncu -e 2",
+    "test-dump-cli": "cd dump/cli && npm install && npm test && ncu -e 2 --packageFile package.json",
     "release": "run-s release-*",
     "release-module": "git-directory-deploy --email travis@travis-ci.org --user 'Travis CI' --directory dump/module --branch master --repo https://$GH_TOKEN@github.com/noamokman/module-starter-sample.git",
     "release-cli": "git-directory-deploy --email travis@travis-ci.org --user 'Travis CI' --directory dump/cli --branch cli --repo https://$GH_TOKEN@github.com/noamokman/module-starter-sample.git"
