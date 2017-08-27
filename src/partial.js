@@ -26,16 +26,16 @@ export default {
   devDependencies: {
     '@commitlint/cli': '^3.1.3',
     '@commitlint/config-angular': '^3.1.1',
-    'babel-cli': '^6.24.1',
+    'babel-cli': '^6.26.0',
     'babel-jest': '^20.0.3',
     'babel-preset-env': '^1.6.0',
     coveralls: '^2.13.1',
-    eslint: '^4.3.0',
+    eslint: '^4.5.0',
     'eslint-config-noamokman': '^6.0.1',
     husky: '^0.14.3',
     jest: '^20.0.4',
-    'lint-staged': '^4.0.2',
-    'npm-run-all': '^4.0.2',
+    'lint-staged': '^4.0.4',
+    'npm-run-all': '^4.1.0',
     rimraf: '^2.6.1'
   },
   jest: {
