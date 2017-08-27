@@ -12,8 +12,7 @@ const cp = pify(cpr);
 
 export function copyStaticFiles ({path, cli}) {
   return cp(join(__dirname, '../static/common'), path, {overwrite: true})
-    .then(() => cli && cp(join(__dirname, '../static/cli'), path, {overwrite: true}))
-    .then(() => pify(rename)(join(path, 'gitignore'), join(path, '.gitignore')));
+    .then(() => cli && cp(join(__dirname, '../static/cli'), path, {overwrite: true}));
 }
 
 export function fillPackageJson ({path, cli}) {
