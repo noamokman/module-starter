@@ -6,7 +6,7 @@ export default {
     'lint-src': 'eslint src --fix',
     'lint-tests': 'eslint __tests__ --fix',
     precommit: 'lint-staged',
-    commitmsg: 'validate-commit-msg',
+    commitmsg: 'commitlint -e',
     babel: 'babel src -d lib -s',
     build: 'rimraf lib && npm run babel',
     jest: 'jest',
@@ -24,6 +24,8 @@ export default {
     ]
   },
   devDependencies: {
+    '@commitlint/cli': '^3.1.3',
+    '@commitlint/config-angular': '^3.1.1',
     'babel-cli': '^6.24.1',
     'babel-jest': '^20.0.3',
     'babel-preset-env': '^1.6.0',
@@ -34,8 +36,7 @@ export default {
     jest: '^20.0.4',
     'lint-staged': '^4.0.2',
     'npm-run-all': '^4.0.2',
-    rimraf: '^2.6.1',
-    'validate-commit-msg': '^2.13.1'
+    rimraf: '^2.6.1'
   },
   jest: {
     notify: true,
