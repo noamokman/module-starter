@@ -33,6 +33,7 @@ export default {
     eslint: '^4.5.0',
     'eslint-config-noamokman': '^7.1.0',
     'eslint-plugin-import': '^2.8.0',
+    'eslint-plugin-jest': '^21.3.2',
     'eslint-plugin-lodash': '^2.5.0',
     'eslint-plugin-unicorn': '^3.0.0',
     husky: '^0.14.3',
