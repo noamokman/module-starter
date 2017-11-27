@@ -1,11 +1,12 @@
+import {rename} from 'fs';
 import {join} from 'path';
 import cpr from 'cpr';
 import pify from 'pify';
 import jsonfile from 'jsonfile';
-import {rename} from 'fs';
+import execa from 'execa';
+import pCatchIf from 'p-catch-if';
 import partial from './partial.js';
 import partialCli from './partial-cli.js';
-import execa from 'execa';
 
 const jf = pify(jsonfile);
 const cp = pify(cpr);
@@ -20,17 +21,11 @@ export function fillPackageJson ({path, cli}) {
   const pkgPath = join(path, 'package.json');
 
   return jf.readFile(pkgPath)
-    .catch(error => {
-      if (error.code !== 'ENOENT') {
-        return Promise.reject(error);
-      }
-
-      return execa('npm', [
-        'init',
-        '-y'
-      ], {cwd: path})
-        .then(() => jf.readFile(pkgPath));
-    })
+    .catch(pCatchIf(({code}) => code === 'ENOENT', () => execa('npm', [
+      'init',
+      '-y'
+    ], {cwd: path})
+      .then(() => jf.readFile(pkgPath))))
     .then(pkg => {
       let newPkg = {...pkg, ...partial};
 
@@ -39,8 +34,12 @@ export function fillPackageJson ({path, cli}) {
         newPkg.description = newPkg.description || `${pkg.name} cli`;
       }
 
-      return jf.writeFile(pkgPath, newPkg, {spaces: 2});
-    });
+      return Promise.all([
+        newPkg,
+        jf.writeFile(pkgPath, newPkg, {spaces: 2})
+      ]);
+    })
+    .then(([pkg]) => pkg);
 }
 
 export function renameBin ({path}) {
