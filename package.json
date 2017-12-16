@@ -25,7 +25,7 @@
     "release-cli": "git-directory-deploy --email travis@travis-ci.org --user 'Travis CI' --directory dump/cli --branch cli --repo https://$GH_TOKEN@github.com/noamokman/module-starter-sample.git"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "lint-staged": {
     "*.js": [

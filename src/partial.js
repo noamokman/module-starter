@@ -15,7 +15,7 @@ export default {
     test: 'npm run lint && npm run jest'
   },
   engines: {
-    node: '>=4'
+    node: '>=6'
   },
   'lint-staged': {
     '*.js': [
