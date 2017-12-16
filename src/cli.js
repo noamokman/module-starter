@@ -1,22 +1,23 @@
 import {resolve} from 'path';
-import program from 'caporal';
+import program, {BOOL} from 'caporal';
 import updateNotifier from 'update-notifier';
 import pkg from '../package.json';
-import {initilizeModuleDirectory} from '.';
+import {initializeModuleDirectory} from '.';
 
 const notifier = updateNotifier({pkg});
 
 program.version(pkg.version)
   .description(pkg.description)
   .argument('[path]', 'Directory to initialize', null, process.cwd())
-  .option('-c, --cli', 'Initialize a CLI module', program.BOOL, false)
-  .action(({path}, {cli}, logger) => initilizeModuleDirectory({path: resolve(path), cli})
+  .option('-c, --cli', 'Initialize a CLI module', BOOL, false)
+  .option('--readme', 'Should overwrite the readme', BOOL, true)
+  .action(({path}, {cli, readme}, logger) => initializeModuleDirectory({path: resolve(path), cli, readme})
     .then(() => {
       logger.info('All done!');
 
       notifier.notify();
     })
-    .catch(logger.error));
+    .catch(console.error));
 
 /**
  * Handle cli arguments

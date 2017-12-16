@@ -26,7 +26,7 @@ Bootstrap a new module repository with these steps:
 ``` bash
 $ module-starter
 
-   module-starter 2.1.0 - a cli tool to help you start a new node module
+   module-starter 0.0.0 - a cli tool to help you start a new node module
      
    USAGE
 
@@ -38,7 +38,8 @@ $ module-starter
 
    OPTIONS
 
-     -c, --cli      Initialize a CLI module      optional      default: false
+     -c, --cli      Initialize a CLI module          optional      default: false
+     --readme       Should overwrite the readme      optional      default: true
 
    GLOBAL OPTIONS
 
