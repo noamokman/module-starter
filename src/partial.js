@@ -1,6 +1,7 @@
 export default {
   version: '0.0.0',
   main: 'lib/index.js',
+  module: 'src/index.js',
   scripts: {
     lint: 'run-p lint-*',
     'lint-src': 'eslint src --fix',
