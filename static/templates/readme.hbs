@@ -2,8 +2,44 @@
 {{description}}
 
 ## Installation
-``` bash
+{{#if cli}}As cli tool
+```bash
+$ [sudo] npm install {{name}} -g
+```
+
+Programmatically
+{{/if}}```bash
 $ [sudo] npm install {{name}}
+```
+
+## Usage
+{{#if cli}}### CLI
+```bash
+$ {{name}} 0.0.0 - {{description}}
+
+  USAGE
+
+    {{name}} add <a> <b>
+
+  ARGUMENTS
+
+    <a>      The first number       required
+    <b>      The second number      required
+
+  GLOBAL OPTIONS
+
+    -h, --help         Display help
+    -V, --version      Display version
+    --no-color         Disable colors
+    --quiet            Quiet mode - only displays warn and error messages
+    -v, --verbose      Verbose mode - will also output debug messages
+```
+
+### Programmatically
+{{/if}}```js
+import {add} from '{{name}}';
+
+add(1, 2); // 3
 ```
 
 ## License

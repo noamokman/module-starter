@@ -18,7 +18,7 @@ Bootstrap a new module repository with these steps:
 
 * Clone your repository
 
-* run `npm init` with your preferred values (if no package json is found, will run `npm init -y` for you)
+* run `npm init` with your preferred values (if no package json is found, this module will run `npm init -y` for you)
 
 * run `module-starter` in the folder
 
@@ -59,7 +59,7 @@ module-starter
 ```
 
 ### CLI
-You can also genrate a module with a CLI
+You can also generate a module with a CLI
 ``` bash
 git clone https://github.com/me/my-module
 cd my-module

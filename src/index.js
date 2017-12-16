@@ -59,11 +59,11 @@ export function createReadme ({path, cli}) {
     readFile(join(__dirname, '..', 'static', 'templates', 'readme.hbs')),
     readPkg(path)
   ])
-    .then(([buffer, {name = 'module', author = {}, license = 'MIT', repository = {}}]) => {
+    .then(([buffer, {name, description, author = {}, license = 'MIT', repository = {}}]) => {
       const template = Handlebars.compile(buffer.toString());
       const repo = repository.url && parseGithubUrl(repository.url).repo;
 
-      const readme = template({cli, name, hasAuthor: author.url && author.name, author, license, repo});
+      const readme = template({cli, name, description, hasAuthor: author.url && author.name, author, license, repo});
 
       return writeFile(join(path, 'README.md'), readme);
     });
