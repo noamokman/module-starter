@@ -3,7 +3,10 @@
   "version": "2.2.3",
   "description": "a cli tool to help you start a new node module",
   "main": "lib/index.js",
-  "bin": "bin/module-starter",
+  "module": "src/index.js",
+  "bin": {
+   "module-starter": "bin/module-starter"
+  },
   "scripts": {
     "lint": "run-p lint-*",
     "lint-src": "eslint src --fix",
