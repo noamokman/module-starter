@@ -1,4 +1,4 @@
-# module-starter [![Build Status](https://travis-ci.org/noamokman/module-starter.svg?branch=master)](https://travis-ci.org/noamokman/module-starter)
+# module-starter [![Build Status](https://travis-ci.org/noamokman/module-starter.svg?branch=master)](https://travis-ci.org/noamokman/module-starter) [![Greenkeeper badge](https://badges.greenkeeper.io/noamokman/module-starter.svg)](https://greenkeeper.io/)
 
 a cli tool to help you start a new node module
 
