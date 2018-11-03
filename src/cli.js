@@ -11,13 +11,15 @@ program.version(pkg.version)
   .argument('[path]', 'Directory to initialize', null, process.cwd())
   .option('-c, --cli', 'Initialize a CLI module', BOOL, false)
   .option('--readme', 'Should overwrite the readme', BOOL, true)
-  .action(({path}, {cli, readme}, logger) => initializeModuleDirectory({path: resolve(path), cli, readme})
-    .then(() => {
-      logger.info('All done!');
+  .action(({path}, {cli, readme}, logger) => {
+    initializeModuleDirectory({path: resolve(path), cli, readme})
+      .then(() => {
+        logger.info('All done!');
 
-      notifier.notify();
-    })
-    .catch(console.error));
+        notifier.notify();
+      })
+      .catch(console.error);
+  });
 
 /**
  * Handle cli arguments

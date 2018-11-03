@@ -1,6 +1,6 @@
 export default {
   dependencies: {
-    caporal: '^0.9.0',
-    'update-notifier': '^2.3.0'
+    caporal: '^0.10.0',
+    'update-notifier': '^2.5.0'
   }
 };

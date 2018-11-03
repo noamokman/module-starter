@@ -6,8 +6,6 @@ export default {
     lint: 'run-p lint-*',
     'lint-src': 'eslint src --fix',
     'lint-tests': 'eslint __tests__ --fix',
-    precommit: 'lint-staged',
-    commitmsg: 'commitlint -e',
     babel: 'babel src -d lib -s',
     build: 'rimraf lib && npm run babel',
     jest: 'jest',
@@ -16,7 +14,7 @@ export default {
     test: 'npm run lint && npm run jest'
   },
   engines: {
-    node: '>=6'
+    node: '>=8'
   },
   'lint-staged': {
     '*.js': [
@@ -25,23 +23,24 @@ export default {
     ]
   },
   devDependencies: {
-    '@commitlint/cli': '^5.2.5',
-    '@commitlint/config-angular': '^5.1.1',
-    'babel-cli': '^6.26.0',
-    'babel-jest': '^21.2.0',
-    'babel-preset-env': '^1.6.0',
-    coveralls: '^3.0.0',
-    eslint: '^4.13.1',
-    'eslint-config-noamokman': '^7.2.0',
-    'eslint-plugin-import': '^2.8.0',
-    'eslint-plugin-jest': '^21.3.2',
-    'eslint-plugin-lodash': '^2.5.0',
-    'eslint-plugin-unicorn': '^3.0.1',
-    husky: '^0.14.3',
-    jest: '^21.2.1',
-    'lint-staged': '^6.0.0',
-    'npm-run-all': '^4.1.0',
-    rimraf: '^2.6.1'
+    '@babel/cli': '^7.1.2',
+    '@babel/core': '^7.1.2',
+    '@babel/preset-env': '^7.1.0',
+    '@commitlint/cli': '^7.2.1',
+    '@commitlint/config-angular': '^7.1.2',
+    'babel-core': '^7.0.0-bridge.0',
+    'babel-jest': '^23.6.0',
+    coveralls: '^3.0.2',
+    eslint: '^5.8.0',
+    'eslint-config-noamokman': '^8.1.0',
+    'eslint-plugin-import': '^2.14.0',
+    'eslint-plugin-lodash': '^3.1.0',
+    'eslint-plugin-unicorn': '^6.0.1',
+    husky: '^1.1.3',
+    jest: '^23.6.0',
+    'lint-staged': '^8.0.4',
+    'npm-run-all': '^4.1.3',
+    rimraf: '^2.6.2'
   },
   jest: {
     notify: true,
@@ -55,5 +54,11 @@ export default {
       }
     },
     testMatch: ['**/__tests__/**/*.spec.js']
+  },
+  husky: {
+    hooks: {
+      'commit-msg': 'commitlint -e',
+      'pre-commit': 'lint-staged'
+    }
   }
 };
