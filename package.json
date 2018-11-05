@@ -1,6 +1,6 @@
 {
   "name": "module-starter",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "a cli tool to help you start a new node module",
   "main": "lib/index.js",
   "module": "src/index.js",
